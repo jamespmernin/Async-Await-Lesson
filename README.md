@@ -1,7 +1,9 @@
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Intro to Async Await
 
 ## Learning Objectives
-*After this lesson, you will be able to:*
+
+_After this lesson, you will be able to:_
+
 - Compose asynchronous functions.
 - Compose try/catch blocks for API requests.
 - Use `axios` library to make GET requests for data.
@@ -13,19 +15,30 @@
 - EXERCISE: Writing try/catch blocks - 5min
 - EXERCISE: Fetching Github users info with axios - 10min
 
+## Overview of key words
+
+- Async
+- Await
+- Try/Catch
+
 ## Intro To Async
 
 **What is Async?**
 
 > Async, or asynchronous is a function that "pauses" until a specified result.
 
-Let’s emphasize: `await` literally makes JavaScript wait until the promise settles, and then go on with the result. That doesn’t cost any CPU resources, because the engine can do other jobs meanwhile: execute other scripts, handle events etc.
+An asynchronous operation is one that allows the computer to “move on” to other tasks while waiting for the asynchronous operation to complete. Asynchronous programming means that time-consuming operations don’t have to bring everything else in our programs to a halt.
+
+There are countless examples of asynchronicity in our everyday lives. Cleaning our house, for example, involves asynchronous operations such as a dishwasher washing our dishes or a washing machine washing our clothes. While we wait on the completion of those operations, we’re free to do other chores.
+
+Similarly, web development makes use of asynchronous operations. Operations like making a network request or querying a database can be time-consuming, but JavaScript allows us to execute other tasks while awaiting their completion.
 
 <details>
   <summary><strong>Q: Why do we care?</strong></summary>
 
-A: We can’t use `await` in regular functions
-If we try to use await in non-async function, there would be a syntax error:
+A: We can’t use `await` in regular functions.
+
+If we try to use `await` in a non-async function, there would be a syntax error:
 
 ```javascript
 function fetchData() {
@@ -34,7 +47,9 @@ function fetchData() {
 }
 ```
 
-We will get this error if we do not put async before a function. As said, await only works inside an async function.
+We will get this error if we do not put async before a function. As said, `await` only works inside an async function.
+
+Let’s emphasize: `await` literally makes JavaScript wait until the promise settles, and then go on with the result. That doesn’t cost any CPU resources, because the engine can do other jobs meanwhile: execute other scripts, handle events etc.
 
 </details>
 
@@ -54,10 +69,20 @@ showAvatar('your-username-here');
 ```
 
 <details>
-  <summary><strong>Q: Is it safe?</strong></summary>
+  <summary><strong>Q: Do async requests always work?</strong></summary>
 
-A: No, Async/await requests won’t always work
+A: No, `async` requests don’t always work!
+
 People who are just starting to use `await` tend to forget the fact that APIs can return errors, or even nothing at all!
+
+</details>
+
+<details>
+  <summary><strong>Q: What kind of everyday issues disrupt async requests?</strong></summary>
+
+A: Poor network connection, low device battery, server outages, etc.
+
+</details>
 
 Have no fear, as we can wrap our `async` methods with try/catch blocks.
 
@@ -77,13 +102,11 @@ async function showAvatar(name) {
 }
 ```
 
-</details>
-
 ## EXERCISE: Displaying Github user information using try/catch - 5min.
 
-  Inside `async.js`, wrap the lines from `let githubUser` until `return githubUser` inside a `try/catch` block. Inside the `catch` block, be sure to `console.log` any errors.
+Inside `async.js`, wrap the lines from `let githubUser` until `return githubUser` inside a `try/catch` block. Inside the `catch` block, be sure to `console.log` any errors.
 
-  Once you have successfully removed any errors, display your github avatar image and username inside `index.html`.
+Once you have successfully removed any errors, display your github avatar image and username inside `index.html`.
 
 - Sample code (from `async.js`):
 
@@ -103,7 +126,8 @@ showAvatar('your-username-here');
 ```
 
 ## EXERCISE: Displaying multiple Github users - 10min.
-  Inside `async.js`, modify the `showStargazers()` function to display all the github users' avatar images and username on your webpage.
+
+Inside `async.js`, modify the `showStargazers()` function to display all the github users' avatar images and username on your webpage.
 
 - Sample code (from `async.js`):
 
@@ -126,6 +150,10 @@ async function showStargazers() {
 
 showStargazers();
 ```
+
+### Bonus Challenges:
+
+- In `showStargazers()`, can you pass in any new parameters? For instance, you could specify how many github users to display, or even the repository name.
 
 ## Resources
 
