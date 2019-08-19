@@ -1,7 +1,7 @@
-# Intro to Async Await
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Intro to Async Await
 
 ## Learning Objectives
-
+*After this lesson, you will be able to:*
 - Compose asynchronous functions.
 - Compose try/catch blocks for API requests.
 - Use `axios` library to make GET requests for data.
@@ -38,7 +38,7 @@ We will get this error if we do not put async before a function. As said, await 
 
 </details>
 
-## EXERCISE: Writing Async Functions - 15min
+## EXERCISE: Writing Async Functions - 5min
 
 Using an async request, print one Github user's info in your terminal window.
 
@@ -79,7 +79,7 @@ async function showAvatar(name) {
 
 </details>
 
-- EXERCISE: Displaying Github user information using try/catch - 5min.
+## EXERCISE: Displaying Github user information using try/catch - 5min.
 
   Inside `async.js`, wrap the lines from `let githubUser` until `return githubUser` inside a `try/catch` block. Inside the `catch` block, be sure to `console.log` any errors.
 
@@ -102,7 +102,7 @@ async function showAvatar(name) {
 showAvatar('your-username-here');
 ```
 
-- EXERCISE: Displaying multiple Github users - 10min.
+## EXERCISE: Displaying multiple Github users - 10min.
   Inside `async.js`, modify the `showStargazers()` function to display all the github users' avatar images and username on your webpage.
 
 - Sample code (from `async.js`):
