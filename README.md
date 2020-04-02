@@ -158,3 +158,4 @@ showStargazers();
 ## Resources
 
 - [Async Await](https://javascript.info/async-await)
+- [Try Catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
