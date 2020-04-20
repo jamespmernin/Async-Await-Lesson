@@ -21,12 +21,12 @@ async function showStargazers() {
   // insert each avatar's image and username into the DOM.
   // choose whichever type of iterator for each git user..
 
-  //   githubUsers.data.forEach(function(githubUser) {
-  //     let img = document.createElement('img');
-  //     img.src = githubUser.avatar_url;
-  //     img.className = 'col-md-1';
-  //     document.body.append(img);
-  //   });
+    // githubUsers.data.forEach(function(githubUser) {
+    //   let img = document.createElement('img');
+    //   img.src = githubUser.avatar_url;
+    //   img.className = 'col-md-1';
+    //   document.body.append(img);
+    // });
 
   return githubUsers;
 }
