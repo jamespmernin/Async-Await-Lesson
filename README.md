@@ -11,9 +11,9 @@ _After this lesson, you will be able to:_
 
 ## Exercises Labs
 
-- EXERCISE: Writing Async Functions - 5min
-- EXERCISE: Writing try/catch blocks - 5min
-- EXERCISE: Fetching Github users info with axios - 10min
+- EXERCISE: Writing Async Functions
+- EXERCISE: Writing try/catch blocks
+- EXERCISE: Fetching Github users info with axios
 
 ## Overview of key words
 
@@ -53,7 +53,7 @@ Let’s emphasize: `await` literally makes JavaScript wait until the promise set
 
 </details>
 
-## EXERCISE: Writing Async Functions - 5min
+## EXERCISE: Writing Async Functions
 
 Using an async request, print one Github user's info in your terminal window.
 
@@ -84,11 +84,11 @@ A: Poor network connection, low device battery, server outages, etc.
 
 </details>
 
-Have no fear, as we can wrap our `async` methods with try/catch blocks.
+Have no fear, as we can wrap our `async` methods with `try/catch` blocks.
 
 ## Try/Catch Blocks
 
-Safety first! Wrapping async functions inside try/catch blocks helps prevent unhandled errors.
+Safety first! Wrapping `async` functions inside `try/catch` blocks helps prevent unhandled errors.
 
 ```javascript
 async function showAvatar(name) {
@@ -102,7 +102,7 @@ async function showAvatar(name) {
 }
 ```
 
-## EXERCISE: Displaying Github user information using try/catch - 5min.
+## EXERCISE: Displaying Github user information using try/catch
 
 Inside `async.js`, wrap the lines from `let githubUser` until `return githubUser` inside a `try/catch` block. Inside the `catch` block, be sure to `console.log` any errors.
 
@@ -125,36 +125,27 @@ async function showAvatar(name) {
 showAvatar('your-username-here');
 ```
 
-## EXERCISE: Displaying multiple Github users - 10min.
+## EXERCISE: Displaying multiple Github users
 
-Inside `async.js`, modify the `showStargazers()` function to display all the github users' avatar images and username on your webpage.
+Inside `async.js`, modify the `showStargazers()` function to display all the github users' avatar images and username on your webpage. Don't forget to use the `async/await` and `try/catch` syntax. 
 
 - Sample code (from `async.js`):
 
 ```javascript
-async function showStargazers() {
+function showStargazers() {
   // read github user
-  let githubUsers = await axios.get(`
+  let githubUsers = axios.get(`
     https://api.github.com/repos/axios/axios/stargazers`);
 
-  // show the avatars
-  // iterare over the response data
+  // Now let's show the avatars
+  // Start by iterating over the response data
   // insert each avatar's image and username into the DOM.
-  let img = document.createElement('img');
-  img.src = githubUser.avatar_url;
-  img.className = 'col-md-1';
-  document.body.append(img);
 
   return githubUsers;
 }
 
-showStargazers();
+// showStargazers();
 ```
-
-### Bonus Challenges:
-
-- In `showStargazers()`, can you pass in any new parameters? For instance, you could specify how many github users to display, or even the repository name.
-
 ## Resources
 
 - [Async Await](https://javascript.info/async-await)
