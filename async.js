@@ -21,19 +21,32 @@ async function showAvatar(name) {
   })
 }
 
-showAvatar('JamesMernin');
+// showAvatar('JamesMernin');
 
-function showStargazers() {
-  // read github user
-  let githubUsers = axios.get(`
-    https://api.github.com/repos/axios/axios/stargazers`);
+async function showStargazers() {
+  try {
+    // read github user
+    let githubUsers = await axios.get(`https://api.github.com/repos/axios/axios/stargazers`);
 
-  // show the avatars
-  // iterate over the response data
-  // insert each avatar's image and username into the DOM.
-  // choose whichever type of iterator for each git user..
-
-  return githubUsers;
+    /*
+     * show the avatars
+     * iterate over the response data
+     * insert each avatar's image and username into the DOM.
+     * choose whichever type of iterator for each git user.
+     */
+    githubUsers.data.forEach((user) => {
+      let img = document.createElement('img');
+      img.src = user.avatar_url;
+      document.body.append(img);
+      let username = document.createElement('p');
+      username.textContent = user.login;
+      document.body.append(username);
+    })
+  } catch (error) {
+    console.log(`Error: ${error}`);
+  } finally {
+    console.log('This has also been resolved.');
+  }
 }
 
-// showStargazers();
+showStargazers();
